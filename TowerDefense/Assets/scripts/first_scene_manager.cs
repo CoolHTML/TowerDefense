@@ -11,6 +11,7 @@ public class first_scene_manager : MonoBehaviour
     public int enemiesSpawnTogether;
     private int enemiesOnScreen = 0;
     public static first_scene_manager instance = null;
+    private const float spawnDelay = 1f;
 
 
     public void Awake()
@@ -27,7 +28,7 @@ public class first_scene_manager : MonoBehaviour
 
 
 
-    public void Spawn() {
+    IEnumerator Spawn() {
         if (enemiesSpawnTogether > 0 && enemiesOnScreen < totalEnOnLevel)
         {
             for (int i =0; i< enemiesSpawnTogether;i++)
@@ -39,6 +40,8 @@ public class first_scene_manager : MonoBehaviour
                     enemiesOnScreen += 1;
                 }
             }
+            yield return new WaitForSeconds(spawnDelay);
+            StartCoroutine(Spawn());
         }
     }
 
@@ -52,12 +55,8 @@ public class first_scene_manager : MonoBehaviour
     }
     void Start()
     {
-        Spawn();
+        StartCoroutine(Spawn());
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

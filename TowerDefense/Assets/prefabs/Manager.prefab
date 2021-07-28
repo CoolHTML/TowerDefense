@@ -48,6 +48,6 @@ MonoBehaviour:
   - {fileID: 440580312767381018, guid: f0f05effc55135445a4af2b065797925, type: 3}
   - {fileID: 644501043444206976, guid: aa39f58996a900f49a30e674876aaed1, type: 3}
   - {fileID: 5839300281893997836, guid: 0dd1972e194feb3468197bb9188ad6cd, type: 3}
-  maxEnOnScreen: 1
-  totalEnOnLevel: 1
-  enemiesSpawnTogether: 1
+  maxEnOnScreen: 10
+  totalEnOnLevel: 10
+  enemiesSpawnTogether: 2
